@@ -1,0 +1,173 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 1. Base page background & default text */
+html.dark,
+html.dark body,
+html.dark #root > div {
+  background-color: #0b1120 !important;
+  color: #f1f5f9 !important;
+  color-scheme: dark;
+}
+
+/* 2. Top sticky header bar (fixes white bar + invisible title) */
+html.dark header,
+html.dark nav,
+html.dark [class*="bg-white/"] {
+  background-color: rgba(15, 23, 42, 0.92) !important;
+  border-color: #1e293b !important;
+  backdrop-filter: blur(12px);
+}
+
+/* 3. Main cards & white surfaces (catches bg-white and opacity variants) */
+html.dark .bg-white {
+  background-color: #151f32 !important;
+  border-color: #26334d !important;
+}
+
+/* 4. Secondary slate/gray surfaces (fixes washed-out "Today" history row) */
+html.dark [class*="bg-slate-50"],
+html.dark [class*="bg-gray-50"] {
+  background-color: #0f172a !important;
+  border-color: #1e293b !important;
+}
+
+html.dark [class*="bg-slate-100"],
+html.dark [class*="bg-slate-200"],
+html.dark [class*="bg-gray-100"],
+html.dark [class*="bg-gray-200"] {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* 5. Top Status Banner (softens bright orange/emerald/indigo hero banners) */
+html.dark [class*="from-amber-"],
+html.dark [class*="from-orange-"] {
+  background-image: linear-gradient(135deg, #451a03 0%, #78350f 100%) !important;
+  background-color: #451a03 !important;
+  border: 1px solid rgba(245, 158, 11, 0.35) !important;
+}
+
+html.dark [class*="from-emerald-"],
+html.dark [class*="from-teal-"],
+html.dark [class*="from-green-"] {
+  background-image: linear-gradient(135deg, #064e3b 0%, #115e59 100%) !important;
+  background-color: #064e3b !important;
+  border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+
+html.dark [class*="from-indigo-"],
+html.dark [class*="from-violet-"] {
+  background-image: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%) !important;
+  background-color: #1e1b4b !important;
+  border: 1px solid rgba(99, 102, 241, 0.35) !important;
+}
+
+/* 6. Pastel badges, icon boxes & secondary buttons (-50 and -100 shades) */
+html.dark [class*="bg-teal-50"],
+html.dark [class*="bg-teal-100"],
+html.dark [class*="bg-emerald-50"],
+html.dark [class*="bg-emerald-100"],
+html.dark [class*="bg-green-50"],
+html.dark [class*="bg-green-100"] {
+  background-color: rgba(6, 78, 59, 0.45) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  color: #6ee7b7 !important;
+}
+
+html.dark [class*="bg-amber-50"],
+html.dark [class*="bg-amber-100"],
+html.dark [class*="bg-orange-50"],
+html.dark [class*="bg-orange-100"],
+html.dark [class*="bg-yellow-50"],
+html.dark [class*="bg-yellow-100"] {
+  background-color: rgba(120, 53, 15, 0.45) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+  color: #fcd34d !important;
+}
+
+html.dark [class*="bg-indigo-50"],
+html.dark [class*="bg-indigo-100"],
+html.dark [class*="bg-violet-50"],
+html.dark [class*="bg-violet-100"],
+html.dark [class*="bg-purple-50"],
+html.dark [class*="bg-purple-100"],
+html.dark [class*="bg-blue-50"],
+html.dark [class*="bg-blue-100"] {
+  background-color: rgba(49, 46, 129, 0.45) !important;
+  border-color: rgba(129, 140, 248, 0.35) !important;
+  color: #c4b5fd !important;
+}
+
+html.dark [class*="bg-rose-50"],
+html.dark [class*="bg-rose-100"],
+html.dark [class*="bg-red-50"],
+html.dark [class*="bg-red-100"] {
+  background-color: rgba(136, 19, 55, 0.45) !important;
+  border-color: rgba(244, 63, 94, 0.35) !important;
+  color: #fda4af !important;
+}
+
+/* 7. Typography & coloured text readability */
+html.dark [class*="text-slate-9"],
+html.dark [class*="text-slate-8"],
+html.dark [class*="text-gray-9"],
+html.dark [class*="text-gray-8"],
+html.dark [class*="text-amber-9"],
+html.dark [class*="text-orange-9"] {
+  color: #f8fafc !important;
+}
+
+html.dark [class*="text-slate-7"],
+html.dark [class*="text-slate-6"],
+html.dark [class*="text-gray-7"],
+html.dark [class*="text-gray-6"],
+html.dark [class*="text-amber-8"] {
+  color: #cbd5e1 !important;
+}
+
+html.dark [class*="text-slate-5"],
+html.dark [class*="text-slate-4"] {
+  color: #94a3b8 !important;
+}
+
+html.dark [class*="text-teal-7"],
+html.dark [class*="text-teal-8"],
+html.dark [class*="text-teal-9"],
+html.dark [class*="text-emerald-7"],
+html.dark [class*="text-emerald-8"],
+html.dark [class*="text-emerald-9"] {
+  color: #6ee7b7 !important;
+}
+
+html.dark [class*="text-amber-7"],
+html.dark [class*="text-orange-7"] {
+  color: #fcd34d !important;
+}
+
+html.dark [class*="text-indigo-7"],
+html.dark [class*="text-indigo-8"],
+html.dark [class*="text-indigo-9"],
+html.dark [class*="text-violet-7"],
+html.dark [class*="text-purple-7"] {
+  color: #c4b5fd !important;
+}
+
+/* 8. Borders & Form Inputs */
+html.dark [class*="border-slate-"],
+html.dark [class*="border-gray-"] {
+  border-color: #26334d !important;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #0b1120 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b !important;
+}
